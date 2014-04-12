@@ -38,10 +38,16 @@
     "files": "test/*.js",
     "browsers": [
       "ie/9..latest",
-      "chrome/25..latest",
       "firefox/20..latest",
-      "safari/6..latest",
-      "opera/15.0..latest"
+      "firefox/nightly",
+      "chrome/25..latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
     ]
   }
 }
