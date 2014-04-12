@@ -2,7 +2,7 @@
 
 ### Run an array of functions in parallel
 
-[![browser support](https://ci.testling.com/feross/run-parallel.png)](https://ci.testling.com/feross/run-parallel) ![parallel](https://raw.githubusercontent.com/feross/run-parallel/master/img.png)
+![parallel](https://raw.githubusercontent.com/feross/run-parallel/master/img.png) [![browser support](https://ci.testling.com/feross/run-parallel.png)](https://ci.testling.com/feross/run-parallel)
 
 ### install
 
