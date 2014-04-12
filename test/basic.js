@@ -2,7 +2,7 @@ var parallel = require('../')
 var test = require('tape')
 
 test('functions run in parallel', function (t) {
-  t.plan(5)
+  t.plan(4)
 
   var tasks = [
     function (cb) {
@@ -28,7 +28,6 @@ test('functions run in parallel', function (t) {
   var startTime = Date.now()
   parallel(tasks, function (err) {
     t.error(err)
-    t.ok(Date.now() - startTime < 300)
   })
 })
 
