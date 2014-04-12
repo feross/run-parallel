@@ -1,6 +1,6 @@
 module.exports = function (tasks, cb) {
   var pending = tasks.length
-  var results = [] // TODO: preserve order
+  var results = []
 
   function done (i, err, result) {
     if (err) {
