@@ -1,0 +1,47 @@
+{
+  "name": "run-parallel",
+  "description": "Run an array of functions in parallel",
+  "version": "0.0.0",
+  "author": {
+    "name": "Feross Aboukhadijeh",
+    "email": "feross@feross.org",
+    "url": "http://feross.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/feross/run-parallel/issues"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "^2.12.3"
+  },
+  "homepage": "https://github.com/feross/run-parallel",
+  "keywords": [
+    "parallel",
+    "async",
+    "function",
+    "callback",
+    "asynchronous",
+    "run",
+    "array",
+    "run parallel"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/feross/run-parallel.git"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/9..latest",
+      "chrome/25..latest",
+      "firefox/20..latest",
+      "safari/6..latest",
+      "opera/15.0..latest"
+    ]
+  }
+}
