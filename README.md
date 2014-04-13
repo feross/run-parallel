@@ -19,6 +19,17 @@ function has completed. If any of the functions pass an error to its callback, t
 `callback` is immediately called with the value of the error. Once the `tasks` have
 completed, the results are passed to the final `callback` as an array.
 
+#### arguments
+
+- `tasks` - An array containing functions to run. Each function is passed a
+`callback(err, result)` which it must call on completion with an error `err` (which can
+be `null`) and an optional `result` value.
+- `callback(err, results)` - An optional callback to run once all the functions have
+completed. This function gets a results array containing all the result arguments passed
+to the task callbacks.
+
+#### example
+
 ```js
 var parallel = require('run-parallel')
 
