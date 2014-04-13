@@ -18,7 +18,12 @@ module.exports = function (tasks, cb) {
     }
   }
 
-  tasks.forEach(function (task, i) {
-    task(done.bind(undefined, i))
-  })
+  if (tasks.length) {
+    tasks.forEach(function (task, i) {
+      task(done.bind(undefined, i))
+    })
+  } else {
+    cb && cb(null, [])
+    cb = null
+  }
 }
