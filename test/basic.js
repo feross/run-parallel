@@ -6,26 +6,19 @@ test('functions run in parallel', function (t) {
 
   var tasks = [
     function (cb) {
-      setTimeout(function () {
-        t.pass('cb 1')
-        cb(null)
-      }, 100)
+      t.pass('cb 1')
+      cb(null)
     },
     function (cb) {
-      setTimeout(function () {
-        t.pass('cb 2')
-        cb(null)
-      }, 100)
+      t.pass('cb 2')
+      cb(null)
     },
     function (cb) {
-      setTimeout(function () {
-        t.pass('cb 3')
-        cb(null)
-      }, 100)
+      t.pass('cb 3')
+      cb(null)
     }
   ]
 
-  var startTime = Date.now()
   parallel(tasks, function (err) {
     t.error(err)
   })
