@@ -1,4 +1,4 @@
-# run-parallel [![travis](https://img.shields.io/travis/feross/run-parallel.svg)](https://travis-ci.org/feross/run-parallel) [![npm](https://img.shields.io/npm/v/run-parallel.svg)](https://npmjs.org/package/run-parallel) [![gittip](https://img.shields.io/gittip/feross.svg)](https://www.gittip.com/feross/)
+# run-parallel [![travis](https://img.shields.io/travis/feross/run-parallel.svg)](https://travis-ci.org/feross/run-parallel) [![npm](https://img.shields.io/npm/v/run-parallel.svg)](https://npmjs.org/package/run-parallel)
 
 ### Run an array of functions in parallel
 
