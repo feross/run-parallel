@@ -1,29 +1,35 @@
 module.exports = function (tasks, cb) {
-  var pending = tasks.length
-  var results = []
+  var results, pending, keys
+  if (Array.isArray(tasks)) {
+    results = []
+    pending = tasks.length
+  } else {
+    keys = Object.keys(tasks)
+    results = {}
+    pending = keys.length
+  }
 
   function done (i, err, result) {
-    if (err) {
-      cb && cb(err, results)
-      cb = null
-      return
-    }
-
     results[i] = result
-    pending -= 1
-
-    if (pending === 0) {
-      cb && cb(null, results)
+    if (--pending === 0 || err) {
+      cb && cb(err, results)
       cb = null
     }
   }
 
-  if (tasks.length) {
+  if (!pending) {
+    // empty
+    cb && cb(null, results)
+    cb = null
+  } else if (keys) {
+    // object
+    keys.forEach(function (key) {
+      tasks[key](done.bind(undefined, key))
+    })
+  } else {
+    // array
     tasks.forEach(function (task, i) {
       task(done.bind(undefined, i))
     })
-  } else {
-    cb && cb(null, [])
-    cb = null
   }
 }

@@ -19,14 +19,18 @@ function has completed. If any of the functions pass an error to its callback, t
 `callback` is immediately called with the value of the error. Once the `tasks` have
 completed, the results are passed to the final `callback` as an array.
 
+It is also possible to use an object instead of an array. Each property will be run as a
+function and the results will be passed to the final `callback` as an object instead of
+an array. This can be a more readable way of handling the results.
+
 ##### arguments
 
-- `tasks` - An array containing functions to run. Each function is passed a
+- `tasks` - An array or object containing functions to run. Each function is passed a
 `callback(err, result)` which it must call on completion with an error `err` (which can
 be `null`) and an optional `result` value.
 - `callback(err, results)` - An optional callback to run once all the functions have
-completed. This function gets a results array containing all the result arguments passed
-to the task callbacks.
+completed. This function gets a results array (or object) containing all the result
+arguments passed to the task callbacks.
 
 ##### example
 
