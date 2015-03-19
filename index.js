@@ -1,4 +1,7 @@
+var dezalgo = require('dezalgo')
+
 module.exports = function (tasks, cb) {
+  if (cb) cb = dezalgo(cb)
   var results, pending, keys
   if (Array.isArray(tasks)) {
     results = []

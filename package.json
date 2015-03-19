@@ -10,7 +10,9 @@
   "bugs": {
     "url": "https://github.com/feross/run-parallel/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "dezalgo": "^1.0.1"
+  },
   "devDependencies": {
     "tape": "^2.12.3"
   },
