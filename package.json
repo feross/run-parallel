@@ -14,6 +14,7 @@
     "dezalgo": "^1.0.1"
   },
   "devDependencies": {
+    "standard": "^3.2.0",
     "tape": "^2.12.3"
   },
   "homepage": "https://github.com/feross/run-parallel",
@@ -34,7 +35,7 @@
     "url": "git://github.com/feross/run-parallel.git"
   },
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "standard && tape test/*.js"
   },
   "testling": {
     "files": "test/*.js",

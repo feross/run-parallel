@@ -15,14 +15,14 @@ module.exports = function (tasks, cb) {
   function done (i, err, result) {
     results[i] = result
     if (--pending === 0 || err) {
-      cb && cb(err, results)
+      if (cb) cb(err, results)
       cb = null
     }
   }
 
   if (!pending) {
     // empty
-    cb && cb(null, results)
+    if (cb) cb(null, results)
     cb = null
   } else if (keys) {
     // object
