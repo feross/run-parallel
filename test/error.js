@@ -64,3 +64,18 @@ test('functions that return errors (object) w/ partial results', function (t) {
     t.deepEqual(results, { one: 1, two: undefined })
   })
 })
+
+test('array of functions that produce multiple errors', function (t) {
+  var tasks = [
+    function (cb) {
+      cb(new Error('a'))
+    },
+    function (cb) {
+      cb(new Error('b'))
+    }
+  ]
+  parallel(tasks, function (err) {
+    t.ok(err.message === 'a', 'only observes the first error')
+    t.end()
+  })
+})
