@@ -15,7 +15,8 @@
   },
   "devDependencies": {
     "standard": "^3.2.0",
-    "tape": "^4.0.0"
+    "tape": "^4.0.0",
+    "zuul": "^3.1.0"
   },
   "homepage": "https://github.com/feross/run-parallel",
   "keywords": [
@@ -35,22 +36,9 @@
     "url": "git://github.com/feross/run-parallel.git"
   },
   "scripts": {
-    "test": "standard && tape test/*.js"
-  },
-  "testling": {
-    "files": "test/*.js",
-    "browsers": [
-      "ie/9..latest",
-      "chrome/25..latest",
-      "chrome/canary",
-      "firefox/20..latest",
-      "firefox/nightly",
-      "safari/6..latest",
-      "opera/12..latest",
-      "opera/next",
-      "ipad/6.0..latest",
-      "iphone/6.0..latest",
-      "android-browser/4.2..latest"
-    ]
+    "test": "standard && npm run test-node && npm run test-browser",
+    "test-browser": "zuul -- test/*.js",
+    "test-browser-local": "zuul --local -- test/*.js",
+    "test-node": "tape test/*.js"
   }
 }
