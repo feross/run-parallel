@@ -74,6 +74,7 @@ Works great in the browser with [browserify](http://browserify.org/)!
 ### see also
 
 - [run-auto](https://github.com/feross/run-auto)
+- [run-parallel-limit](https://github.com/feross/run-parallel-limit)
 - [run-series](https://github.com/feross/run-series)
 - [run-waterfall](https://github.com/feross/run-waterfall)
 
