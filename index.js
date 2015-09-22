@@ -11,7 +11,7 @@ module.exports = function (tasks, cb) {
     pending = keys.length
   }
 
-  function done (err, results) {
+  function done (err) {
     function end () {
       if (cb) cb(err, results)
       cb = null
@@ -23,13 +23,13 @@ module.exports = function (tasks, cb) {
   function each (i, err, result) {
     results[i] = result
     if (--pending === 0 || err) {
-      done(err, results)
+      done(err)
     }
   }
 
   if (!pending) {
     // empty
-    done(null, results)
+    done(null)
   } else if (keys) {
     // object
     keys.forEach(function (key) {
