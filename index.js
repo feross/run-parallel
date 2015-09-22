@@ -1,6 +1,7 @@
 module.exports = function (tasks, cb) {
   var results, pending, keys
   var isSync = true
+
   if (Array.isArray(tasks)) {
     results = []
     pending = tasks.length
@@ -12,10 +13,11 @@ module.exports = function (tasks, cb) {
 
   function done (err, results) {
     function end () {
-      cb && cb(err, results)
+      if (cb) cb(err, results)
       cb = null
     }
-    isSync ? process.nextTick(end) : end()
+    if (isSync) process.nextTick(end)
+    else end()
   }
 
   function each (i, err, result) {
