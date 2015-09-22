@@ -1,8 +1,6 @@
-var dezalgo = require('dezalgo')
-
 module.exports = function (tasks, cb) {
-  if (cb) cb = dezalgo(cb)
   var results, pending, keys
+  var isSync = true
   if (Array.isArray(tasks)) {
     results = []
     pending = tasks.length
@@ -12,27 +10,35 @@ module.exports = function (tasks, cb) {
     pending = keys.length
   }
 
-  function done (i, err, result) {
+  function done (err, results) {
+    function end () {
+      cb && cb(err, results)
+      cb = null
+    }
+    isSync ? process.nextTick(end) : end()
+  }
+
+  function each (i, err, result) {
     results[i] = result
     if (--pending === 0 || err) {
-      if (cb) cb(err, results)
-      cb = null
+      done(err, results)
     }
   }
 
   if (!pending) {
     // empty
-    if (cb) cb(null, results)
-    cb = null
+    done(null, results)
   } else if (keys) {
     // object
     keys.forEach(function (key) {
-      tasks[key](done.bind(undefined, key))
+      tasks[key](each.bind(undefined, key))
     })
   } else {
     // array
     tasks.forEach(function (task, i) {
-      task(done.bind(undefined, i))
+      task(each.bind(undefined, i))
     })
   }
+
+  isSync = false
 }
