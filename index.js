@@ -1,5 +1,6 @@
 module.exports = function (tasks, cb) {
-  var results, pending, keys, zalgo = true
+  var results, pending, keys
+  var isSync = true
   if (Array.isArray(tasks)) {
     results = []
     pending = tasks.length
@@ -8,11 +9,13 @@ module.exports = function (tasks, cb) {
     results = {}
     pending = keys.length
   }
-  
-  function done () {
-    if (cb && zalgo) process.nextTick(function () { cb.apply(undefined, arguments) })
-    else if (cb) cb.apply(undefined, arguments)
-    cb = null
+
+  function done (err, results) {
+    function end () {
+      cb && cb(err, results)
+      cb = null
+    }
+    isSync ? process.nextTick(end) : end()
   }
 
   function each (i, err, result) {
@@ -36,6 +39,6 @@ module.exports = function (tasks, cb) {
       task(each.bind(undefined, i))
     })
   }
-  
-  zalgo = false
+
+  isSync = false
 }
