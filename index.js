@@ -33,12 +33,12 @@ module.exports = function (tasks, cb) {
   } else if (keys) {
     // object
     keys.forEach(function (key) {
-      tasks[key](each.bind(undefined, key))
+      tasks[key](function (err, result) { each(key, err, result) })
     })
   } else {
     // array
     tasks.forEach(function (task, i) {
-      task(each.bind(undefined, i))
+      task(function (err, result) { each(i, err, result) })
     })
   }
 
