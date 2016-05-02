@@ -12,7 +12,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "standard": "^6.0.5",
+    "standard": "^7.0.0",
     "tape": "^4.0.0",
     "zuul": "^3.1.0"
   },
