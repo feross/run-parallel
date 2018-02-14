@@ -5,8 +5,7 @@
   "author": {
     "name": "Feross Aboukhadijeh",
     "email": "feross@feross.org",
-    "url": "https://feross.org",
-    "donate": "https://patreon.com/feross"
+    "url": "http://feross.org/"
   },
   "bugs": {
     "url": "https://github.com/feross/run-parallel/issues"
