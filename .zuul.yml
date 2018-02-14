@@ -10,5 +10,3 @@ browsers:
     version: latest
   - name: ie
     version: latest
-  - name: android
-    version: latest
