@@ -12,9 +12,9 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "airtap": "0.0.4",
     "standard": "*",
-    "tape": "^4.0.0",
-    "zuul": "^3.1.0"
+    "tape": "^4.0.0"
   },
   "homepage": "https://github.com/feross/run-parallel",
   "keywords": [
@@ -35,8 +35,8 @@
   },
   "scripts": {
     "test": "standard && npm run test-node && npm run test-browser",
-    "test-browser": "zuul -- test/*.js",
-    "test-browser-local": "zuul --local -- test/*.js",
+    "test-browser": "airtap -- test/*.js",
+    "test-browser-local": "airtap --local -- test/*.js",
     "test-node": "tape test/*.js"
   }
 }
