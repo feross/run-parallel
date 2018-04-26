@@ -1,4 +1,6 @@
-module.exports = function (tasks, cb) {
+module.exports = runParallel
+
+function runParallel (tasks, cb) {
   var results, pending, keys
   var isSync = true
 
