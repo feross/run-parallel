@@ -12,7 +12,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "airtap": "^2.0.3",
+    "airtap": "^3.0.0",
     "standard": "*",
     "tape": "^4.0.0"
   },
