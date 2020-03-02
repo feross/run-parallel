@@ -14,7 +14,7 @@
   "devDependencies": {
     "airtap": "^2.0.3",
     "standard": "*",
-    "tape": "^4.0.0"
+    "tape": "4.13.0"
   },
   "homepage": "https://github.com/feross/run-parallel",
   "keywords": [
