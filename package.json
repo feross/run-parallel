@@ -13,7 +13,7 @@
   "dependencies": {},
   "devDependencies": {
     "airtap": "^2.0.3",
-    "standard": "*",
+    "standard": ">=14.3.4",
     "tape": "^4.0.0"
   },
   "homepage": "https://github.com/feross/run-parallel",
