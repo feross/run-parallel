@@ -1,10 +1,10 @@
-var parallel = require('../')
-var test = require('tape')
+const parallel = require('../')
+const test = require('tape')
 
 test('functions that return errors (array)', function (t) {
   t.plan(3)
 
-  var tasks = [
+  const tasks = [
     function (cb) {
       t.pass('cb 1')
       cb(new Error('oops'))
@@ -25,7 +25,7 @@ test('functions that return errors (array)', function (t) {
 test('functions that return errors (object)', function (t) {
   t.plan(3)
 
-  var tasks = {
+  const tasks = {
     one: function (cb) {
       t.pass('cb 1')
       cb(new Error('oops'))
@@ -46,7 +46,7 @@ test('functions that return errors (object)', function (t) {
 test('functions that return errors (object) w/ partial results', function (t) {
   t.plan(4)
 
-  var tasks = {
+  const tasks = {
     one: function (cb) {
       t.pass('cb 1')
       cb(null, 1)
@@ -66,7 +66,7 @@ test('functions that return errors (object) w/ partial results', function (t) {
 })
 
 test('array of functions that produce multiple errors', function (t) {
-  var tasks = [
+  const tasks = [
     function (cb) {
       cb(new Error('a'))
     },

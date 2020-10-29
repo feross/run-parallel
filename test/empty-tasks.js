@@ -1,5 +1,5 @@
-var parallel = require('../')
-var test = require('tape')
+const parallel = require('../')
+const test = require('tape')
 
 test('empty tasks array', function (t) {
   t.plan(1)

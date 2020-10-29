@@ -1,10 +1,10 @@
-var parallel = require('../')
-var test = require('tape')
+const parallel = require('../')
+const test = require('tape')
 
 test('functions run in parallel', function (t) {
   t.plan(4)
 
-  var tasks = [
+  const tasks = [
     function (cb) {
       t.pass('cb 1')
       cb(null)
@@ -27,7 +27,7 @@ test('functions run in parallel', function (t) {
 test('functions that return results', function (t) {
   t.plan(4)
 
-  var tasks = [
+  const tasks = [
     function (cb) {
       t.pass('cb 1')
       cb(null, 1)
@@ -47,7 +47,7 @@ test('functions that return results', function (t) {
 test('functions that return results preserve order', function (t) {
   t.plan(4)
 
-  var tasks = [
+  const tasks = [
     function (cb) {
       setTimeout(function () {
         t.pass('cb 1')

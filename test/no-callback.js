@@ -1,10 +1,10 @@
-var parallel = require('../')
-var test = require('tape')
+const parallel = require('../')
+const test = require('tape')
 
 test('no callback (array)', function (t) {
   t.plan(2)
 
-  var tasks = [
+  const tasks = [
     function (cb) {
       t.pass('cb 1')
     },
@@ -19,7 +19,7 @@ test('no callback (array)', function (t) {
 test('no callback (object)', function (t) {
   t.plan(2)
 
-  var tasks = {
+  const tasks = {
     one: function (cb) {
       t.pass('cb 1')
     },
