@@ -1,6 +1,8 @@
 /*! run-parallel. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 module.exports = runParallel
 
+const queueMicrotask = require('queue-microtask')
+
 function runParallel (tasks, cb) {
   let results, pending, keys
   let isSync = true
@@ -19,7 +21,7 @@ function runParallel (tasks, cb) {
       if (cb) cb(err, results)
       cb = null
     }
-    if (isSync) process.nextTick(end)
+    if (isSync) queueMicrotask(end)
     else end()
   }
 
