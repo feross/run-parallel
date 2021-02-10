@@ -1,7 +1,7 @@
-# run-parallel [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
+# run-parallel [![ci][ci-image]][ci-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][downloads-url] [![javascript style guide][standard-image]][standard-url]
 
-[travis-image]: https://img.shields.io/travis/feross/run-parallel/master.svg
-[travis-url]: https://travis-ci.org/feross/run-parallel
+[ci-image]: https://img.shields.io/github/workflow/status/feross/run-parallel/ci/master
+[ci-url]: https://github.com/feross/run-parallel/actions
 [npm-image]: https://img.shields.io/npm/v/run-parallel.svg
 [npm-url]: https://npmjs.org/package/run-parallel
 [downloads-image]: https://img.shields.io/npm/dm/run-parallel.svg
